@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#547f9c">
+  <meta name="description" content="비를 무서워하던 아기 고양이 모모가 빗방울을 모아 시든 꽃을 살리는 따뜻한 어린이 동화">
+  <title>빗방울을 모으는 아기 고양이</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    :root { --night:#17394c; --indigo:#315f77; --gold:#ffd84d; }
+    body {
+      background:
+        radial-gradient(circle at 15% 12%, rgba(135,205,223,.23), transparent 25rem),
+        radial-gradient(circle at 85% 72%, rgba(255,216,77,.12), transparent 28rem),
+        #17394c;
+    }
+    .brand-mark { background:#ffe05d; }
+    .cover-shade { background:linear-gradient(90deg,rgba(15,50,65,.91),rgba(26,70,87,.54) 40%,transparent 76%); }
+    .story-card .dialogue { color:#43869a; }
+    .chapter { background:#3c8497; }
+    .ending { background:radial-gradient(circle at center 34%,rgba(255,221,91,.35),transparent 16rem),linear-gradient(145deg,#fffef5,#dff0ee); }
+    @media (max-width:720px) {
+      .cover-shade { background:linear-gradient(0deg,rgba(15,50,65,.94),rgba(26,70,87,.02) 86%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="../../index.html" aria-label="꿈씨앗 책방 홈">
+      <span class="brand-mark">✦</span><span>꿈씨앗 책방</span>
+    </a>
+    <button class="sound-button" id="soundButton" type="button" aria-pressed="false">
+      <span class="sound-icon">♪</span><span class="sound-label">소리 켜기</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="book-shell" aria-label="빗방울을 모으는 아기 고양이 동화책">
+      <div class="book" id="book">
+        <article class="page cover active" data-page="0">
+          <img class="cover-art" src="assets/cover.png" alt="노란 우비를 입고 빗방울이 담긴 양동이를 든 아기 고양이 모모">
+          <div class="cover-shade"></div>
+          <div class="cover-copy">
+            <p class="eyebrow">용기와 친절을 배우는 이야기</p>
+            <h1>빗방울을 모으는<br>아기 고양이</h1>
+            <p class="author">글 · 그림 꿈씨앗 책방</p>
+            <button class="start-button" type="button">이야기 시작하기 <span>→</span></button>
+          </div>
+          <p class="age">4–7세 · 약 3분</p>
+        </article>
+
+        <article class="page story-page" data-page="1">
+          <div class="scene-art" aria-hidden="true"><img class="scene-image" src="assets/scene-1.png" alt=""></div>
+          <div class="story-card">
+            <span class="chapter">하나</span>
+            <p>비가 토독토독 내리는 날이었어요.<br>아기 고양이 모모는 문밖으로 코만 살짝 내밀었지요.</p>
+            <p class="dialogue">“비는 차갑고 무서울 것 같아.”</p>
+          </div>
+        </article>
+
+        <article class="page story-page" data-page="2">
+          <div class="scene-art" aria-hidden="true"><img class="scene-image" src="assets/scene-2.png" alt=""></div>
+          <div class="story-card">
+            <span class="chapter">둘</span>
+            <p>그때 반짝이는 빗방울 하나가 모모의 앞발에 톡 내려앉았어요.<br>간질간질, 생각보다 아주 부드러웠답니다.</p>
+            <p class="dialogue">“어? 비가 나에게 인사했어!”</p>
+          </div>
+        </article>
+
+        <article class="page story-page" data-page="3">
+          <div class="scene-art" aria-hidden="true"><img class="scene-image" src="assets/scene-3.png" alt=""></div>
+          <div class="story-card">
+            <span class="chapter">셋</span>
+            <p>용기가 난 모모는 파란 양동이를 들고 정원으로 나갔어요.<br>잎사귀와 꽃잎에서 빗방울을 하나씩 모았지요.</p>
+            <p class="dialogue">“한 방울, 또 한 방울!”</p>
+          </div>
+        </article>
+
+        <article class="page story-page" data-page="4">
+          <div class="scene-art" aria-hidden="true"><img class="scene-image" src="assets/scene-4.png" alt=""></div>
+          <div class="story-card">
+            <span class="chapter">넷</span>
+            <p>정원 구석에서 축 늘어진 꽃들이 보였어요.<br>커다란 나뭇잎 아래라 빗물이 닿지 않았던 거예요.</p>
+            <p class="dialogue">“조금만 기다려. 내가 도와줄게.”</p>
+          </div>
+        </article>
+
+        <article class="page story-page" data-page="5">
+          <div class="scene-art" aria-hidden="true"><img class="scene-image" src="assets/scene-5.png" alt=""></div>
+          <div class="story-card">
+            <span class="chapter">다섯</span>
+            <p>모모는 모아 둔 빗방울을 꽃들에게 나누어 주었어요.<br>꽃들은 기지개를 켜듯 활짝 피어났답니다.</p>
+            <p class="dialogue">“내 양동이는 비었지만, 마음은 가득 찼어!”</p>
+          </div>
+        </article>
+
+        <article class="page story-page" data-page="6">
+          <div class="scene-art" aria-hidden="true"><img class="scene-image" src="assets/scene-6.png" alt=""></div>
+          <div class="story-card">
+            <span class="chapter">여섯</span>
+            <p>비가 그치자 하늘에 커다란 무지개가 피어났어요.<br>모모는 이제 비 오는 날이 조금도 무섭지 않았답니다.</p>
+            <p class="dialogue">“다음 비에는 누구를 도와줄까?”</p>
+          </div>
+        </article>
+
+        <article class="page ending" data-page="7">
+          <div class="ending-stars">✦　·　🌈　·　✦</div>
+          <div class="ending-rabbit">🐈</div>
+          <p class="the-end">끝</p>
+          <h2>용기는 아주 작은<br>한 걸음에서 시작돼요.</h2>
+          <p class="question">모모처럼 용기를 내어 해보고 싶은 일은 무엇인가요?</p>
+          <button class="restart-button" type="button">처음부터 다시 읽기 ↻</button>
+        </article>
+      </div>
+
+      <nav class="book-controls" aria-label="책 페이지 이동">
+        <button class="nav-button prev" type="button" aria-label="이전 페이지">←</button>
+        <div class="progress-wrap">
+          <div class="progress-track"><span id="progressBar"></span></div>
+          <p><strong id="currentPage">표지</strong><span id="pageCount"> / 7</span></p>
+        </div>
+        <button class="nav-button next" type="button" aria-label="다음 페이지">→</button>
+      </nav>
+    </section>
+  </main>
+
+  <footer>
+    <p>조그만 용기가 누군가에게는 커다란 선물이 될 수 있어요.</p>
+    <span>꿈씨앗 책방의 두 번째 이야기</span>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

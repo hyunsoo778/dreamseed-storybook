@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#101b3d">
+  <title>달빛 씨앗을 심은 토끼</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="../../index.html" aria-label="꿈씨앗 책방 홈">
+      <span class="brand-mark">✦</span>
+      <span>꿈씨앗 책방</span>
+    </a>
+    <button class="sound-button" id="soundButton" type="button" aria-pressed="false">
+      <span class="sound-icon">♪</span>
+      <span class="sound-label">소리 켜기</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="book-shell" aria-label="달빛 씨앗을 심은 토끼 동화책">
+      <div class="book" id="book">
+        <article class="page cover active" data-page="0">
+          <img class="cover-art" src="../../assets/moonlight-rabbit.png" alt="달빛 숲에서 빛나는 씨앗을 든 작은 토끼">
+          <div class="cover-shade"></div>
+          <div class="cover-copy">
+            <p class="eyebrow">마음을 밝히는 작은 이야기</p>
+            <h1>달빛 씨앗을<br>심은 토끼</h1>
+            <p class="author">글 · 그림 꿈씨앗 책방</p>
+            <button class="start-button" type="button">이야기 시작하기 <span>→</span></button>
+          </div>
+          <p class="age">5–8세 · 약 3분</p>
+        </article>
+
+        <article class="page story-page scene-1" data-page="1">
+          <div class="scene-art" aria-hidden="true">
+            <img class="scene-image" src="../../assets/scene-1.png" alt="">
+          </div>
+          <div class="story-card">
+            <span class="chapter">하나</span>
+            <p>달이 아주 환한 밤이었어요.<br>토리는 숲길에서 작은 빛 하나를 발견했지요.</p>
+            <p class="dialogue">“어라? 별이 땅에 떨어졌나?”</p>
+          </div>
+        </article>
+
+        <article class="page story-page scene-2" data-page="2">
+          <div class="scene-art" aria-hidden="true">
+            <img class="scene-image" src="../../assets/scene-2.png" alt="">
+          </div>
+          <div class="story-card">
+            <span class="chapter">둘</span>
+            <p>토리는 빛을 포근한 흙 속에 심었어요.<br>그리고 매일 아침 맑은 물을 한 모금씩 주었답니다.</p>
+            <p class="dialogue">“무엇이 될지는 몰라도, 잘 자라렴.”</p>
+          </div>
+        </article>
+
+        <article class="page story-page scene-3" data-page="3">
+          <div class="scene-art" aria-hidden="true">
+            <img class="scene-image" src="../../assets/scene-3.png" alt="">
+          </div>
+          <div class="story-card">
+            <span class="chapter">셋</span>
+            <p>며칠 뒤, 차가운 비바람이 찾아왔어요.<br>어린 싹은 금방이라도 쓰러질 것 같았지요.</p>
+            <p class="dialogue">“걱정 마. 내가 곁에 있을게!”</p>
+          </div>
+        </article>
+
+        <article class="page story-page scene-4" data-page="4">
+          <div class="scene-art" aria-hidden="true">
+            <img class="scene-image" src="../../assets/scene-4.png" alt="">
+          </div>
+          <div class="story-card">
+            <span class="chapter">넷</span>
+            <p>토리는 밤새 작은 싹을 품어 주었어요.<br>토리의 따뜻한 마음이 흙 아래로 스며들었지요.</p>
+          </div>
+        </article>
+
+        <article class="page story-page scene-5" data-page="5">
+          <div class="scene-art" aria-hidden="true">
+            <img class="scene-image" src="../../assets/scene-5.png" alt="">
+          </div>
+          <div class="story-card">
+            <span class="chapter">다섯</span>
+            <p>구름이 걷히자, 놀라운 일이 일어났어요.<br>싹에서 달처럼 둥글고 환한 꽃이 피어난 거예요!</p>
+            <p class="dialogue">“와, 숲에 작은 달이 떴어!”</p>
+          </div>
+        </article>
+
+        <article class="page story-page scene-6" data-page="6">
+          <div class="scene-art" aria-hidden="true">
+            <img class="scene-image" src="../../assets/scene-6.png" alt="">
+          </div>
+          <div class="story-card">
+            <span class="chapter">여섯</span>
+            <p>꽃빛은 길을 잃은 동물들의 집을 비추어 주었어요.<br>그날부터 숲은 밤에도 외롭지 않았답니다.</p>
+          </div>
+        </article>
+
+        <article class="page ending" data-page="7">
+          <div class="ending-stars">✦　·　✧　·　✦</div>
+          <div class="ending-rabbit">🐇</div>
+          <p class="the-end">끝</p>
+          <h2>작은 마음 하나가<br>온 숲을 환하게 밝혔어요.</h2>
+          <p class="question">여러분은 어떤 마음의 씨앗을 심고 싶나요?</p>
+          <button class="restart-button" type="button">처음부터 다시 읽기 ↻</button>
+        </article>
+      </div>
+
+      <nav class="book-controls" aria-label="책 페이지 이동">
+        <button class="nav-button prev" type="button" aria-label="이전 페이지">←</button>
+        <div class="progress-wrap">
+          <div class="progress-track"><span id="progressBar"></span></div>
+          <p><strong id="currentPage">표지</strong><span id="pageCount"> / 7</span></p>
+        </div>
+        <button class="nav-button next" type="button" aria-label="다음 페이지">→</button>
+      </nav>
+    </section>
+  </main>
+
+  <footer>
+    <p>오늘 밤, 아이와 함께 마음의 씨앗을 심어 보세요.</p>
+    <span>꿈씨앗 책방의 첫 번째 이야기</span>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>
