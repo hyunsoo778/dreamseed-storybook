@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1433">
+  <meta name="description" content="아이와 함께 읽는 무료 웹 동화책, 꿈씨앗 책방">
+  <title>꿈씨앗 책방 | 무료 웹 동화책</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --night: #0b1433;
+      --cream: #fff9e9;
+      --gold: #ffd767;
+      --muted: #aab6d3;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(102,133,199,.23), transparent 28rem),
+        radial-gradient(circle at 90% 80%, rgba(255,215,103,.1), transparent 30rem),
+        var(--night);
+      font-family: "Gowun Dodum", sans-serif;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .22;
+      background-image: radial-gradient(circle, white 1px, transparent 1.5px);
+      background-size: 92px 92px;
+    }
+    a { color: inherit; }
+    .topbar {
+      width: min(1120px, calc(100% - 36px));
+      height: 80px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font-family: "Gaegu", cursive;
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      aspect-ratio: 1;
+      color: var(--night);
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 22px rgba(255,215,103,.35);
+    }
+    .top-note { color: rgba(255,255,255,.55); font-size: .82rem; }
+    main {
+      position: relative;
+      width: min(1120px, calc(100% - 36px));
+      margin: auto;
+      padding: 52px 0 80px;
+    }
+    .intro { max-width: 710px; margin-bottom: 43px; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: .82rem;
+      letter-spacing: .12em;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Gaegu", cursive;
+      font-size: clamp(3.2rem, 8vw, 6.4rem);
+      line-height: .93;
+      letter-spacing: -.045em;
+    }
+    .intro-text {
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.16rem);
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+    .shelf-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 17px;
+    }
+    .shelf-title h2 { margin: 0; font-family: "Gaegu"; font-size: 1.8rem; }
+    .shelf-title span { color: rgba(255,255,255,.45); font-size: .78rem; }
+    .books {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .book-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 490px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 24px;
+      background: #1b294d;
+      box-shadow: 0 22px 45px rgba(0,0,0,.25);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .book-card:hover, .book-card:focus-visible {
+      transform: translateY(-8px);
+      border-color: rgba(255,215,103,.55);
+      box-shadow: 0 30px 60px rgba(0,0,0,.36);
+      outline: none;
+    }
+    .book-cover {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .book-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(6,13,34,.97) 0%, rgba(8,16,38,.72) 34%, transparent 68%);
+    }
+    .book-info {
+      position: absolute;
+      z-index: 2;
+      left: 24px;
+      right: 24px;
+      bottom: 23px;
+    }
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 5px 9px;
+      color: #26304e;
+      background: var(--gold);
+      border-radius: 999px;
+      font-size: .7rem;
+      font-weight: 700;
+    }
+    .book-info h3 {
+      margin: 0;
+      font-family: "Gaegu", cursive;
+      font-size: clamp(2rem, 3vw, 2.7rem);
+      line-height: 1;
+    }
+    .book-info p {
+      min-height: 44px;
+      margin: 10px 0 17px;
+      color: rgba(255,255,255,.7);
+      font-size: .88rem;
+      line-height: 1.55;
+      word-break: keep-all;
+    }
+    .read {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,.13);
+      color: #fff1ad;
+      font-size: .88rem;
+      font-weight: 700;
+    }
+    .read b { font-size: 1.2rem; transition: transform .2s ease; }
+    .book-card:hover .read b { transform: translateX(5px); }
+    .guide {
+      margin-top: 34px;
+      padding: 22px 24px;
+      color: rgba(255,255,255,.66);
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      line-height: 1.65;
+      text-align: center;
+      font-size: .9rem;
+    }
+    footer {
+      padding: 30px 20px 42px;
+      color: rgba(255,255,255,.4);
+      border-top: 1px solid rgba(255,255,255,.07);
+      text-align: center;
+      font-size: .78rem;
+    }
+    @media (max-width: 850px) {
+      .books { grid-template-columns: 1fr 1fr; }
+      .book-card:last-child { grid-column: 1 / -1; min-height: 420px; }
+    }
+    @media (max-width: 600px) {
+      .topbar {
+        width: calc(100% - 28px);
+        height: 64px;
+        padding-top: env(safe-area-inset-top);
+      }
+      .top-note { display: none; }
+      main {
+        width: calc(100% - 24px);
+        padding: 31px 0 calc(55px + env(safe-area-inset-bottom));
+      }
+      .intro { margin-bottom: 32px; }
+      h1 { font-size: clamp(3.1rem, 16vw, 4.6rem); }
+      .intro-text { margin-top: 15px; font-size: .96rem; }
+      .shelf-title { margin-bottom: 13px; }
+      .books { grid-template-columns: 1fr; gap: 16px; }
+      .book-card, .book-card:last-child {
+        grid-column: auto;
+        min-height: min(132vw, 540px);
+        border-radius: 19px;
+      }
+      .book-info { left: 20px; right: 20px; bottom: 20px; }
+      .book-info h3 { font-size: 2.4rem; }
+      .book-info p { min-height: 0; margin-bottom: 13px; }
+      .guide { margin-top: 23px; padding: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition-duration: .01ms !important; }
+    }
+  </style>
+  <!-- AdSense ready: adsense-config.js에서 실제 ca-pub ID로 교체 후 enabled=true -->
+  <link rel="stylesheet" href="adsense.css">
+  <script src="adsense-config.js" defer></script>
+  <script src="adsense-loader.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">✦</span><span>꿈씨앗 책방</span>
+    </a>
+    <span class="top-note">아이와 함께 읽는 무료 웹 동화</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">DREAM SEED STORYBOOK</p>
+      <h1>오늘은 어떤<br>이야기를 읽을까요?</h1>
+      <p class="intro-text">표지를 누르면 바로 동화가 시작됩니다. 휴대폰에서는 손가락으로 넘기고, 컴퓨터에서는 화살표 버튼으로 읽어보세요.</p>
+    </section>
+
+    <aside class="ad-wrap ad-wrap-top" aria-label="광고" data-ad-slot-placeholder data-slot-name="homeTop"></aside>
+
+    <section aria-labelledby="shelf-heading">
+      <div class="shelf-title">
+        <h2 id="shelf-heading">꿈씨앗 책장</h2>
+        <span>동화 13권</span>
+      </div>
+
+      <div class="books">
+        <a class="book-card" href="stories/moonlight-rabbit/index.html">
+          <img class="book-cover" src="assets/moonlight-rabbit.png" alt="달빛 씨앗을 심은 토끼 표지">
+          <div class="book-info">
+            <span class="tag">5–8세 · 마음과 나눔</span>
+            <h3>달빛 씨앗을 심은 토끼</h3>
+            <p>토리의 따뜻한 마음이 어두운 숲을 밝혀주는 이야기</p>
+            <span class="read">동화책 바로 읽기 <b>→</b></span>
+          </div>
+        </a>
+
+        <a class="book-card" href="stories/baby-cat/index.html">
+          <img class="book-cover" src="stories/baby-cat/assets/cover.png" alt="빗방울을 모으는 아기 고양이 표지">
+          <div class="book-info">
+            <span class="tag">4–7세 · 용기와 친절</span>
+            <h3>빗방울을 모으는 아기 고양이</h3>
+            <p>비를 무서워하던 모모가 작은 용기로 꽃밭을 돕는 이야기</p>
+            <span class="read">동화책 바로 읽기 <b>→</b></span>
+          </div>
+        </a>
+
+        <a class="book-card" href="stories/rescue-dog/index.html">
+          <img class="book-cover" src="stories/rescue-dog/assets/cover.png" alt="별이가 기다린 한마디 표지">
+          <div class="book-info">
+            <span class="tag">5–9세 · 입양과 책임</span>
+            <h3>별이가 기다린 한마디</h3>
+            <p>보호소 강아지 별이가 믿음을 쌓아 평생 가족을 만나는 이야기</p>
+            <span class="read">동화책 바로 읽기 <b>→</b></span>
+          </div>
+        </a>
+
+        <a class="book-card" href="stories/short/index.html?id=morning-bell">
+          <img class="book-cover" src="assets/short-stories/morning-bell.png" alt="토리와 사라진 아침 종 표지">
+          <div class="book-info"><span class="tag">4–7세 · 배려와 양보</span><h3>토리와 사라진 아침 종</h3><p>사라진 마을 종을 찾아 모두가 행복한 방법을 생각하는 이야기</p><span class="read">동화책 바로 읽기 <b>→</b></span></div>
+        </a>
+        <a class="book-card" href="stories/short/index.html?id=moonlight-umbrella">
+          <img class="book-cover" src="assets/short-stories/moonlight-umbrella.png" alt="모모의 달빛 우산 표지">
+          <div class="book-info"><span class="tag">4–7세 · 공감과 위로</span><h3>모모의 달빛 우산</h3><p>슬픈 구름 곁에서 조용히 비를 함께 맞아주는 모모의 이야기</p><span class="read">동화책 바로 읽기 <b>→</b></span></div>
+        </a>
+        <a class="book-card" href="stories/short/index.html?id=wind-post-office">
+          <img class="book-cover" src="assets/short-stories/wind-post-office.png" alt="별이와 바람 우체국 표지">
+          <div class="book-info"><span class="tag">5–8세 · 약속과 책임</span><h3>별이와 바람 우체국</h3><p>날아간 편지를 끝까지 찾아 약속을 지키는 별이의 하루</p><span class="read">동화책 바로 읽기 <b>→</b></span></div>
+        </a>
+        <a class="book-card" href="stories/short/index.html?id=rainbow-map">
+          <img class="book-cover" src="assets/short-stories/rainbow-map.png" alt="세 친구의 무지개 지도 표지">
+          <div class="book-info"><span class="tag">5–8세 · 협동</span><h3>세 친구의 무지개 지도</h3><p>토리·모모·별이가 서로의 재주를 모아 소원 나무를 찾는 이야기</p><span class="read">동화책 바로 읽기 <b>→</b></span></div>
+        </a>
+        <a class="book-card" href="stories/short/index.html?id=slow-carrot">
+          <img class="book-cover" src="assets/short-stories/slow-carrot.png" alt="토리의 느린 당근 표지">
+          <div class="book-info"><span class="tag">4–7세 · 인내와 성장</span><h3>토리의 느린 당근</h3><p>남들보다 천천히 자라는 작은 싹을 기다려주는 이야기</p><span class="read">동화책 바로 읽기 <b>→</b></span></div>
+        </a>
+        <a class="book-card" href="stories/short/index.html?id=sleepless-cloud">
+          <img class="book-cover" src="assets/short-stories/sleepless-cloud.png" alt="모모와 잠 못 드는 구름 표지">
+          <div class="book-info"><span class="tag">4–7세 · 안정과 휴식</span><h3>모모와 잠 못 드는 구름</h3><p>걱정이 많아 잠들지 못하는 구름의 마음을 쉬게 하는 이야기</p><span class="read">동화책 바로 읽기 <b>→</b></span></div>
+        </a>
+        <a class="book-card" href="stories/short/index.html?id=courage-pouch">
+          <img class="book-cover" src="assets/short-stories/courage-pouch.png" alt="별이의 용기 주머니 표지">
+          <div class="book-info"><span class="tag">5–8세 · 두려움과 용기</span><h3>별이의 용기 주머니</h3><p>무서운 징검다리를 한 걸음씩 건너는 별이의 이야기</p><span class="read">동화책 바로 읽기 <b>→</b></span></div>
+        </a>
+        <a class="book-card" href="stories/short/index.html?id=snowflake-scarf">
+          <img class="book-cover" src="assets/short-stories/snowflake-scarf.png" alt="토리와 모모의 눈꽃 목도리 표지">
+          <div class="book-info"><span class="tag">4–7세 · 배려와 협력</span><h3>토리와 모모의 눈꽃 목도리</h3><p>서로의 재주를 이어 어린 전나무를 따뜻하게 해주는 이야기</p><span class="read">동화책 바로 읽기 <b>→</b></span></div>
+        </a>
+        <a class="book-card" href="stories/short/index.html?id=sea-bottle-letter">
+          <img class="book-cover" src="assets/short-stories/sea-bottle-letter.png" alt="모모와 별이의 바다 편지 표지">
+          <div class="book-info"><span class="tag">5–8세 · 환경 보호</span><h3>모모와 별이의 바다 편지</h3><p>바다가 보낸 그림 편지를 따라 해변을 돌보는 이야기</p><span class="read">동화책 바로 읽기 <b>→</b></span></div>
+        </a>
+        <a class="book-card" href="stories/short/index.html?id=starlight-picnic">
+          <img class="book-cover" src="assets/short-stories/starlight-picnic.png" alt="세 친구의 별빛 소풍 표지">
+          <div class="book-info"><span class="tag">4–8세 · 우정과 감사</span><h3>세 친구의 별빛 소풍</h3><p>흐린 밤에도 고마운 마음으로 별을 만드는 세 친구의 이야기</p><span class="read">동화책 바로 읽기 <b>→</b></span></div>
+        </a>
+      </div>
+    </section>
+
+    <aside class="ad-wrap ad-wrap-middle" aria-label="광고" data-ad-slot-placeholder data-slot-name="homeMiddle"></aside>
+
+    <p class="guide">동화를 다 읽은 뒤 왼쪽 위의 ‘꿈씨앗 책방’을 누르면 이 책장으로 돌아올 수 있어요.</p>
+  </main>
+
+  <footer>© 꿈씨앗 책방 · 아이의 마음에 작은 이야기를 심습니다.</footer>
+</body>
+</html>

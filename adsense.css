@@ -1,0 +1,45 @@
+.ad-wrap {
+  width: min(970px, 100%);
+  min-height: 96px;
+  margin: 28px auto;
+  padding: 10px;
+  border: 1px dashed rgba(255, 215, 103, .38);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .055);
+}
+
+.ad-wrap-top { margin: 26px 0 34px; }
+.ad-wrap-middle { margin: 34px auto; }
+.ad-wrap-bottom { margin: 30px auto 10px; }
+
+.ad-placeholder {
+  display: grid;
+  place-items: center;
+  gap: 5px;
+  min-height: 90px;
+  color: rgba(255, 249, 233, .78);
+  text-align: center;
+}
+
+.ad-placeholder span {
+  font-family: "Gaegu", cursive;
+  font-size: 1.35rem;
+  color: #ffd767;
+}
+
+.ad-placeholder small {
+  max-width: 560px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .56);
+  word-break: keep-all;
+}
+
+.adsbygoogle { min-height: 90px; }
+
+@media (max-width: 600px) {
+  .ad-wrap {
+    min-height: 76px;
+    margin: 20px auto;
+    border-radius: 14px;
+  }
+}
